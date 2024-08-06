@@ -3,7 +3,7 @@ require('dotenv').config()
 
 export const sequelizeConfig: SequelizeModuleOptions = {
 
-    dialect: 'postgres',
+    dialect: 'mariadb',
     host: process.env.DB_HOST,
     port: parseInt(process.env.DB_PORT),
     username: process.env.DB_ROOT_USER,
