@@ -22,12 +22,16 @@ export class UserController {
     @Post("register")
     @HttpCode(201)
     async register(@Body() user: userDTO) {
-        if (process.env.PROD) {
+        const d = process.env.PROD
+        if (d == "false" || d == "False") {
             throw new UnauthorizedException("Disable router")
-        } else {
+        }
+        if (d == "true" || d == "True") {
+
             const data = await this.userService.regiser(user)
             return { token: data }
         }
+        throw new UnauthorizedException("Disable router")
 
     }
 
