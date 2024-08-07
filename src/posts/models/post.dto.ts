@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString } from "class-validator";
+import { IsBoolean, IsNotEmpty, IsOptional, IsString } from "class-validator";
 
 export class postDTO {
 
@@ -6,9 +6,9 @@ export class postDTO {
     @IsNotEmpty({ message: "Campo titulo não pode ser vazio" })
     titulo: string
 
-    @IsNotEmpty({ message: "Campo subtitulo não pode ser vazio" })
-    @IsString()
-    subtitulo: string
+    @IsBoolean()
+    @IsOptional()
+    destaque?: boolean
 
     @IsNotEmpty({ message: "Campo conteudo não pode ser vazio" })
     @IsString()

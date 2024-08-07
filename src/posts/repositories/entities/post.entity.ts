@@ -5,8 +5,10 @@ export class PostEntity extends Model<PostEntity> {
     @Column({})
     titulo: string;
 
-    @Column({})
-    subtitulo: string;
+    @Column({
+        defaultValue: false
+    })
+    destaque: boolean;
 
     @Column({})
     conteudo: string;
