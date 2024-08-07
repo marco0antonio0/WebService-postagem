@@ -13,4 +13,8 @@ export class postDTO {
     @IsNotEmpty({ message: "Campo conteudo não pode ser vazio" })
     @IsString()
     conteudo: string
+
+    @IsNotEmpty({ message: "Campo link_image não pode ser vazio" })
+    @IsString()
+    link_image: string
 }
